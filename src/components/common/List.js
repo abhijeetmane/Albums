@@ -4,7 +4,6 @@ import { StyleSheet, FlatList } from "react-native";
 import ListItem from "../UI/ListItem";
 
 const List = props => {
-  console.log("Inside List", props.items);
   return (
     <FlatList
       style={styles.listContainer}

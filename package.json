@@ -32,6 +32,9 @@
     "eslint-plugin-react-native": "^3.2.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
-    "react-native-navigation": "^1.1.462"
+    "react-native-navigation": "^1.1.462",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   }
 }

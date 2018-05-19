@@ -1,10 +1,11 @@
 import { Navigation } from "react-native-navigation";
+import startApp from "./src/components/StartApp";
+import { Provider } from "react-redux";
+import configureStore from "./src/store/configureStore";
 import Login from "./src/screens/Login";
+import Albums from "./src/screens/Albums";
 
-Navigation.registerComponent("Albums.Login", () => Login);
-Navigation.startSingleScreenApp({
-  screen: {
-    screen: "Albums.Login",
-    title: "Login"
-  }
-});
+const store = configureStore();
+Navigation.registerComponent("Albums.Login", () => Login, store, Provider);
+Navigation.registerComponent("Albums.Albums", () => Albums);
+startApp();

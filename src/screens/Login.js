@@ -13,7 +13,9 @@ import HeadingText from "../components/common/HeadingText";
 import backgroundImage from "../assets/background.png";
 import Button from "../components/common/CustomButton";
 import validate from "../utility/Validation";
-
+import startApp from "../components/StartApp";
+import { connect } from "react-redux";
+import { saveAuth } from "../store/actions/";
 class Login extends Component {
   static navigatorStyle = {
     navBarBackgroundColor: "#0B365B",
@@ -54,6 +56,7 @@ class Login extends Component {
     const authData = {
       email: this.state.controls.email
     };
+    this.props.onLogin(authData);
   };
   updateInputState = (key, value) => {
     this.setState(prevState => {
@@ -133,4 +136,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    isLoading: state.ui.isLoading,
+    user: state.auth.user
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogin: authData => dispatch(saveAuth(authData))
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
