@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  View,
-  Platform
-} from "react-native";
+import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
-let x;
 const CustomButton = props => {
   const content = (
     <View
@@ -25,14 +17,11 @@ const CustomButton = props => {
       </Text>
     </View>
   );
-  if (Platform.OS === "Android") {
-    return (
-      <TouchableNativeFeedback onPress={props.onPress}>
-        {content}
-      </TouchableNativeFeedback>
-    );
-  }
-  return <TouchableOpacity onPress={props.onPress}>{content}</TouchableOpacity>;
+  return (
+    <TouchableOpacity onPress={props.onPress} disabled={props.disabled}>
+      {content}
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({
