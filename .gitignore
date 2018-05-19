@@ -18,6 +18,7 @@ yarn-error.log*
 
 
 # Xcode
+build/
 !**/*.xcodeproj
 !**/*.pbxproj
 !**/*.xcworkspacedata
@@ -59,6 +60,9 @@ buck-out
 .watchmanconfig
 
 # Android
+#
+build/
+
 .idea
 .gradle
 local.properties
