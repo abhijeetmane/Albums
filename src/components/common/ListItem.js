@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-
+import Capitalize from "../../utility/Capitalize";
+import AlbumItem from "../AlbumItem";
 class listItem extends Component {
   render() {
+    const { title } = this.props.item;
+    const itemTitle = Capitalize(title);
+    const { listItem, albumView, albumTitle } = styles;
     if (this.props.type === "album") {
       return (
         <TouchableOpacity onPress={this.props.onItemPressed}>
-          <View style={styles.listItem} />
+          <View style={listItem}>
+            <AlbumItem title={itemTitle} />
+          </View>>
         </TouchableOpacity>
       );
     }
-
     if (this.props.type === "photos") {
       return (
         <TouchableOpacity onPress={this.props.onItemPressed}>

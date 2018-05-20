@@ -7,5 +7,5 @@ import Albums from "./src/screens/Albums";
 
 const store = configureStore();
 Navigation.registerComponent("Albums.Login", () => Login, store, Provider);
-Navigation.registerComponent("Albums.Albums", () => Albums);
+Navigation.registerComponent("Albums.Albums", () => Albums, store, Provider);
 startApp();
