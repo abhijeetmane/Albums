@@ -22,6 +22,17 @@ class Albums extends Component {
     const selectedAlbum = this.props.albums.find(album => {
       return album.id === key;
     });
+    this.props.navigator.push({
+      screen: "Albums.Photos",
+      title: "Photos",
+      passProps: {
+        selectedAlbum: selectedAlbum
+      },
+      animated: true,
+      navigatorButtons: {
+        tintColor: "#fff"
+      }
+    });
   };
   componentDidMount() {
     this.props.onLoadAlbums();

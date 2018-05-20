@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, FlatList } from "react-native";
 
-import ListItem from "../UI/ListItem";
+import ListItem from "../common/ListItem";
 
 const List = props => {
   return (

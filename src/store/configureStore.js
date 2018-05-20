@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 import authReducer from "./reducers/authReducer";
 import uiReducer from "./reducers/uiReducer";
 import albumsReducer from "./reducers/albumsReducer";
+import photosReducer from "./reducers/photosReducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
   ui: uiReducer,
-  albums: albumsReducer
+  albums: albumsReducer,
+  photos: photosReducer
 });
 
 let composeEnhancers = compose;
