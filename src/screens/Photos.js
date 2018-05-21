@@ -16,21 +16,27 @@ class Photos extends Component {
     const albumId = this.props.selectedAlbum.id;
     this.props.onLoadPhotos(albumId);
   }
-  itemSelectedHandler = () => {
-    // this.props.navigator.showLightBox({
-    //   screen: "Albums.PhotoDetails",
-    //   title: "Details",
-    //   style: {
-    //     backgroundBlur: "light",
-    //     backgroundColor: "#ff000010",
-    //     tapBackgroundToDismiss: true
-    //   },
-    //   adjustSoftInput: "resize"
-    // });
+  itemSelectedHandler = key => {
+    const albumTitle = this.props.selectedAlbum.title;
+    const selectedPhoto = this.props.photos.find(photo => {
+      return photo.id === key;
+    });
+    this.props.navigator.showLightBox({
+      screen: "Albums.PhotoDetails",
+      title: "Details",
+      passProps: { selectedPhoto: selectedPhoto, albumTitle: albumTitle },
+      style: {
+        backgroundBlur: "light",
+        backgroundColor: "#ff000010",
+        tapBackgroundToDismiss: true
+      },
+      adjustSoftInput: "resize"
+    });
   };
   render() {
+    const { container } = styles;
     return (
-      <View style={styles.container}>
+      <View style={container}>
         <PhotosList
           items={this.props.photos}
           onItemSelected={this.itemSelectedHandler}
