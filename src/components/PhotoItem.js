@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Text } from "react-native";
 
 const PhotoItem = props => {
   const {
+    photoView,
     textContainerStyle,
     thumbnailImageStyle,
     imageStyle,
@@ -10,14 +11,14 @@ const PhotoItem = props => {
     titleTextStyle
   } = styles;
   return (
-    <View style={styles.photoView}>
+    <View style={photoView}>
       <View style={thumbnailContainerStyle}>
         <Image
           style={thumbnailImageStyle}
           source={{ uri: props.item.thumbnailUrl }}
         />
       </View>
-      <Text style={titleTextStyle}>{props.title}</Text>
+      <Text style={titleTextStyle}>{props.item.title}</Text>
     </View>
   );
 };
@@ -32,6 +33,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     position: "relative"
   },
+  titleTextStyle: {
+    flex: 1,
+    flexWrap: "wrap",
+    fontSize: 15
+  },
   thumbnailContainerStyle: {
     justifyContent: "center",
     alignItems: "center",
@@ -42,11 +48,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25
-  },
-  titleTextStyle: {
-    flex: 1,
-    flexWrap: "wrap",
-    fontSize: 15
   }
 });
 

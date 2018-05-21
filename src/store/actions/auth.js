@@ -19,7 +19,6 @@ export const setUser = userData => {
 
 export const authSignIn = authData => {
   let url = HOST_URL + "users?email=" + authData.email.value;
-  console.log(url);
   return dispatch => {
     dispatch(startLoadingIndicator());
     fetch(url)
@@ -38,7 +37,6 @@ export const authSignIn = authData => {
       .catch(err => {
         dispatch(stopLoadingIndicator());
         alert("Ooops! Something went wrong 😟.Please Try Again");
-        console.log(err);
       });
   };
 };

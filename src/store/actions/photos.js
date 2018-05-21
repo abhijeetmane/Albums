@@ -9,7 +9,6 @@ export const getPhotos = albumId => {
         dispatch(setPhotos(parsedRes));
       })
       .catch(err => {
-        console.log(err);
         alert("Ooops! something went wrong😞");
       });
   };

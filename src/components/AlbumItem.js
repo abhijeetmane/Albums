@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 
 const AlbumItem = props => {
+  const { albumView, albumTitle } = styles;
   return (
-    <View style={styles.albumView}>
-      <Text style={styles.albumTitle}>{props.title}</Text>
+    <View style={albumView}>
+      <Text style={albumTitle}>{props.title}</Text>
     </View>
   );
 };
@@ -20,8 +21,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   albumTitle: {
-    fontSize: 20,
-    fontWeight: "bold"
+    fontSize: 18,
+    fontWeight: "bold",
+    flexWrap: "wrap"
   }
 });
 

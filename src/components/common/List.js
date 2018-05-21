@@ -4,9 +4,10 @@ import { StyleSheet, FlatList } from "react-native";
 import ListItem from "../common/ListItem";
 
 const List = props => {
+  const { listContainer } = styles;
   return (
     <FlatList
-      style={styles.listContainer}
+      style={listContainer}
       data={props.items}
       renderItem={info => (
         <ListItem

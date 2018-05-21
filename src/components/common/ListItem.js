@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Dimensions
+} from "react-native";
 import Capitalize from "../../utility/Capitalize";
 import AlbumItem from "../AlbumItem";
 import PhotoItem from "../PhotoItem";
@@ -7,7 +14,15 @@ class listItem extends Component {
   render() {
     const { title } = this.props.item;
     const itemTitle = Capitalize(title);
-    const { listItem, albumView, albumTitle } = styles;
+
+    const {
+      listItem,
+      textContainerStyle,
+      thumbnailImageStyle,
+      imageStyle,
+      thumbnailContainerStyle,
+      titleTextStyle
+    } = styles;
     if (this.props.type === "album") {
       return (
         <TouchableOpacity onPress={this.props.onItemPressed}>
@@ -20,8 +35,8 @@ class listItem extends Component {
     if (this.props.type === "photos") {
       return (
         <TouchableOpacity onPress={this.props.onItemPressed}>
-          <View style={styles.listItem}>
-            <PhotoItem title={itemTitle} item={this.props.item} />
+          <View style={listItem}>
+            <PhotoItem item={this.props.item} />
           </View>
         </TouchableOpacity>
       );
@@ -29,6 +44,7 @@ class listItem extends Component {
     return <View />;
   }
 }
+
 const styles = StyleSheet.create({
   listItem: {
     borderWidth: 1,

@@ -82,10 +82,10 @@ class Login extends Component {
         Log In
       </Button>
     );
-
+    const { backgroundImage, container, input } = styles;
     return (
-      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <ImageBackground source={backgroundImage} style={backgroundImage}>
+        <KeyboardAvoidingView style={container} behavior="padding">
           <HeadingText>Wel Come</HeadingText>
           <View
             style={
@@ -95,7 +95,7 @@ class Login extends Component {
             }
           >
             <InputText
-              style={styles.input}
+              style={input}
               placeholder="Email"
               value={this.state.controls.email.value}
               onChangeText={val => this.updateInputState("email", val)}

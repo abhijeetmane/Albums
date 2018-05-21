@@ -12,7 +12,6 @@ export const getAlbums = () => {
             dispatch(setAlbums(parsedRes));
           })
           .catch(err => {
-            console.log(err);
             alert("Ooops! something went wrong😞.Please Try Again!");
           });
       }
