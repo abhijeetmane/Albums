@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Button } from "react-native";
-import { AsyncStorage } from "react-native";
+import { StyleSheet, View, Button, AsyncStorage, Platform } from "react-native";
 import startApp from "../components/StartApp";
 import AlbumsList from "../components/common/List";
 import { connect } from "react-redux";
 import { getAlbums } from "../store/actions/";
+import Icon from "react-native-vector-icons/Ionicons";
 
 class Albums extends Component {
   static navigatorStyle = {
     navBarBackgroundColor: "#0B365B",
     navBarTextColor: "#fff",
     navBarTextFontSize: 22,
+    navBarButtonColor: "#fff",
     // iOS only
     statusBarTextColorSchemeSingleScreen: "light",
+    navBarRightButtonColor: "#fff",
     //Android only
     navigationBarColor: "#0B365B",
     statusBarColor: "#fff",
@@ -34,13 +36,30 @@ class Albums extends Component {
       }
     });
   };
+  constructor(props) {
+    super(props);
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+  }
+  onNavigatorEvent = event => {
+    if (event.type === "NavBarButtonPress") {
+      if (event.id === "logout") {
+        AsyncStorage.removeItem("auth:userId");
+        startApp();
+      }
+    }
+  };
   componentDidMount() {
+    const icon = Icon.getImageSource(
+      Platform.OS === "android" ? "md-log-out" : "ios-log-out",
+      30
+    ).then(icon => {
+      this.props.navigator.setButtons({
+        rightButtons: [{ id: "logout", icon: icon }]
+      });
+    });
     this.props.onLoadAlbums();
   }
-  logOutHandler = () => {
-    AsyncStorage.removeItem("auth:userId");
-    startApp();
-  };
+
   render() {
     return (
       <View style={styles.container}>
