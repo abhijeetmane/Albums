@@ -21,7 +21,7 @@
   * for Android
     * run `react-native run-android`
     
-# Loginn Screen
+# Login Screen
 
 ![albums_video](https://user-images.githubusercontent.com/21329772/40388701-79934ece-5e10-11e8-8c32-fd0126e98a12.gif)
 
