@@ -1,44 +1,33 @@
 
 
-* [Available Scripts](#available-scripts)
-  * [npm start](#npm-start)
-  * [npm test](#npm-test)
-  * [npm run ios](#npm-run-ios)
-  * [npm run android](#npm-run-android)
-  * [npm run eject](#npm-run-eject)
+
+# Albums App
+
+## :arrow_up: How to Setup
+
+**Step 1:** git clone this repo:
+
+**Step 2:** cd to the cloned repo:
+
+**Step 3:** Install the Application with `npm` or `yarn`
 
 
-If Yarn was installed when the project was initialized, then dependencies will have been installed via Yarn, and you should probably use it to run these commands as well. Unlike dependency installation, command running syntax is identical for Yarn and NPM at the time of this writing.
+## :arrow_forward: How to Run App
 
-### `npm start`
+1. cd to the repo
+2. Run Build for either OS
+  * for iOS
+    * run `react-native run-ios`
+  * for Android
+    * run `react-native run-android`
+    
+# Loginn Screen
 
-Runs your app in development mode.
+![albums_video](https://user-images.githubusercontent.com/21329772/40388701-79934ece-5e10-11e8-8c32-fd0126e98a12.gif)
 
-Open it in the [Expo app](https://expo.io) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
+# Albums Screen
 
-Sometimes you may need to reset or clear the React Native packager's cache. To do so, you can pass the `--reset-cache` flag to the start script:
+![albumscreen](https://user-images.githubusercontent.com/21329772/40389323-62f2bedc-5e12-11e8-9878-ae91e65484fd.gif)
 
-```
-npm start --reset-cache
-# or
-yarn start --reset-cache
-```
-
-#### `npm test`
-
-Runs the [jest](https://github.com/facebook/jest) test runner on your tests.
-
-#### `npm run ios`
-
-Like `npm start`, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
-
-#### `npm run android`
-
-Like `npm start`, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for detailed setup). We also recommend installing Genymotion as your Android emulator. Once you've finished setting up the native build environment, there are two options for making the right copy of `adb` available to Create React Native App:
-
-
-#### `npm run eject`
-
-This will start the process of "ejecting" from Create React Native App's build scripts. You'll be asked a couple of questions about how you'd like to build your project.
-
-
+# Photos and Photo Details Screen
+![photoscreen](https://user-images.githubusercontent.com/21329772/40389753-73d5f11e-5e13-11e8-9ff0-06be8673e8c1.gif)
