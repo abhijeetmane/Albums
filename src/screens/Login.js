@@ -82,9 +82,12 @@ class Login extends Component {
         Log In
       </Button>
     );
-    const { backgroundImage, container, input } = styles;
+    const { container, input } = styles;
     return (
-      <ImageBackground source={backgroundImage} style={backgroundImage}>
+      <ImageBackground
+        source={backgroundImage}
+        style={styles.backgroundImageStyle}
+      >
         <KeyboardAvoidingView style={container} behavior="padding">
           <HeadingText>Wel Come</HeadingText>
           <View
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  backgroundImage: {
+  backgroundImageStyle: {
     flex: 1,
     width: "100%"
   },

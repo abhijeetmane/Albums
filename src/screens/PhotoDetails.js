@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     height: 250
   },
   titleStyle: {
+    paddingBottom: 10,
+    textAlign: "center",
     fontSize: 15,
     fontStyle: "italic",
     color: "#1A4B71",
@@ -51,8 +53,7 @@ const styles = StyleSheet.create({
   },
   albumTitle: {
     textAlign: "center",
-    fontSize: 15,
-    fontWeight: "bold",
+    fontSize: 12,
     color: "#051E39"
   }
 });
